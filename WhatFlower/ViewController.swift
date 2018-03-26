@@ -9,11 +9,14 @@
 import UIKit
 import CoreML
 import Vision
+import SDWebImage
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
+    let wikipediaReader = WikipediaReader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagePicker.sourceType = .camera
         }
         imagePicker.allowsEditing = true
+        
+        descriptionLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +49,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
 
             if let firstResult = results.first {
-                self.navigationItem.title  = firstResult.identifier.capitalized
+                let flowerName = firstResult.identifier.capitalized
+                self.navigationItem.title  = flowerName
+                
+                self.wikipediaReader.readExtract(about: flowerName, completion: { (extract, imageUrl) in
+                    print(extract)
+                    self.descriptionLabel.text = extract
+                    self.photoImageView.sd_setImage(with: URL(string: imageUrl))
+                })
             }
         }
 
@@ -64,6 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Could not convert photo to CIImage")
             }
             
+            descriptionLabel.text = ""
             detect(image: ciImage)
         }
         

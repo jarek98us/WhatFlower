@@ -14,6 +14,7 @@
 		EFDF997B2067C1C8007DD787 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFDF997A2067C1C8007DD787 /* Assets.xcassets */; };
 		EFDF997E2067C1C8007DD787 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFDF997C2067C1C8007DD787 /* LaunchScreen.storyboard */; };
 		EFDF99862067C1E6007DD787 /* FlowerClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = EFDF99852067C1E6007DD787 /* FlowerClassifier.mlmodel */; };
+		EFF009A5206943730021C6A0 /* WikipediaReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF009A4206943730021C6A0 /* WikipediaReader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		EFDF997D2067C1C8007DD787 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFDF997F2067C1C8007DD787 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFDF99852067C1E6007DD787 /* FlowerClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FlowerClassifier.mlmodel; sourceTree = "<group>"; };
+		EFF009A4206943730021C6A0 /* WikipediaReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaReader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				EFDF99852067C1E6007DD787 /* FlowerClassifier.mlmodel */,
 				EFDF997C2067C1C8007DD787 /* LaunchScreen.storyboard */,
 				EFDF997F2067C1C8007DD787 /* Info.plist */,
+				EFF009A4206943730021C6A0 /* WikipediaReader.swift */,
 			);
 			path = WhatFlower;
 			sourceTree = "<group>";
@@ -188,11 +191,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WhatFlower/Pods-WhatFlower-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +229,7 @@
 			files = (
 				EFDF99862067C1E6007DD787 /* FlowerClassifier.mlmodel in Sources */,
 				EFDF99762067C1C8007DD787 /* ViewController.swift in Sources */,
+				EFF009A5206943730021C6A0 /* WikipediaReader.swift in Sources */,
 				EFDF99742067C1C8007DD787 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
